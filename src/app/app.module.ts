@@ -9,6 +9,7 @@ import { ConvertisseurComponent } from './convertisseur/convertisseur.component'
 import { ToEuroConvertComponent } from './to-euro-convert/to-euro-convert.component';
 import { ActorsComponent } from './actors/actors.component';
 import { ActorComponent } from './actor/actor.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ActorComponent } from './actor/actor.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
