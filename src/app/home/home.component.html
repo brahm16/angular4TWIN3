@@ -1,0 +1,17 @@
+
+<div class="container">
+    <div class="row mt-5">
+        <form>
+            <div class="form-group">
+                <label>Search Price:</label>
+                <input type="number" [(ngModel)]="priceMax" name="priceMax" class="form-control">
+            </div>
+        </form>
+
+    </div>
+    <div class="row my-5">
+        <app-product (notification)="incrementLike($event)" [priceMaxOutput]="priceMax" *ngFor="let p of listProduct" [product]="p"></app-product>
+
+    </div>
+
+</div>

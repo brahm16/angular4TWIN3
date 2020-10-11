@@ -1,0 +1,9 @@
+<form class="form-inline">
+  <div class="form-group mb-2 mx-3">
+    <input  class="form-control" name="device" id="device" [(ngModel)]="device" type="number" />
+  </div>
+    <button (click)="calculer()" class="btn btn-primary">Caculer</button>
+</form>
+{{device}}
+<br>
+  <app-to-euro-convert  [convert]="device"></app-to-euro-convert>
