@@ -1,0 +1,20 @@
+<div class="row my-3">
+
+    <div class="col-6 col-md-4">
+        <div class="card" style="width: 15rem;">
+            <img class="card-img-top" src="../../assets/images/t-shirt.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{product.title}}</h5>
+              <p class="card-text">{{product.title}} liker par {{product.like}}</p>
+            </div>
+          </div>
+
+    </div>
+    <div class="col-12 col-md-8">
+        <h5 class="card-title">{{product.title}}</h5>
+        <p class="card-text">{{product.title}} liker par {{product.like}}</p>
+        <button href="#" (click)="sendNotif()" class="btn btn-primary mx-3">Like</button>
+
+    </div>
+  
+</div>

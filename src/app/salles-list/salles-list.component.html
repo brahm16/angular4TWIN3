@@ -1,0 +1,8 @@
+<div class="my-4">
+    <ul>
+        <li *ngFor="let s of salles">
+            {{s.nom}} <a [routerLink]="['/salle/details', s.id]">details</a>
+        </li>
+    </ul>
+
+</div>
