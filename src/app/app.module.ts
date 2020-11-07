@@ -21,6 +21,12 @@ import { DetailsProductComponent } from './details-product/details-product.compo
 import { ProductService } from './services/product.service';
 import { SallesListComponent } from './salles-list/salles-list.component';
 import { DetailsSalleComponent } from './details-salle/details-salle.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { UsersComponent } from './users/users.component';
+import { HttpClientModule } from '@angular/common/http';
+import { baseURL } from '../shared/BaseURL';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,16 +44,19 @@ import { DetailsSalleComponent } from './details-salle/details-salle.component';
     Ex1Component,
     DetailsProductComponent,
     SallesListComponent,
-    DetailsSalleComponent
+    DetailsSalleComponent,
+    TodoListComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     NgbModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [ProductService],
+  providers: [ProductService,{provide: 'baseURL', useValue: baseURL}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

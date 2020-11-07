@@ -1,0 +1,9 @@
+.todo{
+    background-image: url('../../assets/images/todo.PNG');
+    height: 30rem;
+    width: 30rem;
+}
+.myul{
+    padding-top: 13rem;
+    padding-left: 8.5rem;
+}

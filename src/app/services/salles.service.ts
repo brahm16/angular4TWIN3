@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Salle } from 'src/modele/salle';
+import { baseURL } from 'src/shared/BaseURL';
 import { SALLES } from 'src/shared/salles';
 
 @Injectable({
@@ -7,12 +10,12 @@ import { SALLES } from 'src/shared/salles';
 })
 export class SallesService {
 
-  getSalles(): Salle[]{
-    return SALLES;
+  getSalles(): Observable<Salle[]>{
+    return this.http.get<Salle[]>(baseURL+'salles');
   }
-  getSalle(id: number): Salle{
-    return SALLES.filter(x=>x.id===id)[0];
+  getSalle(id: number): Observable<Salle>{
+    return this.http.get<Salle>(baseURL+'salles/'+id);
   }
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 }

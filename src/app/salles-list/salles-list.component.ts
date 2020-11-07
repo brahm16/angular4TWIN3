@@ -14,7 +14,7 @@ export class SallesListComponent implements OnInit {
   constructor(private sallesService:SallesService) { }
 
   ngOnInit(): void {
-    this.salles=this.sallesService.getSalles();
+    this.sallesService.getSalles().subscribe((salles)=>this.salles=salles);
 
   }
 

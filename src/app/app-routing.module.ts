@@ -10,14 +10,18 @@ import { UserFormComponent } from './user-form/user-form.component';
 import { DetailsProductComponent } from './details-product/details-product.component';
 import { SallesListComponent } from './salles-list/salles-list.component';
 import { DetailsSalleComponent } from './details-salle/details-salle.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { UsersComponent } from './users/users.component';
 
 const routes : Routes = [
   {path:"",redirectTo:"product",pathMatch:'full'},
   {path:"ex1",component:Ex1Component},
   {path:"reactive",component:ReactiveFormComponent },
+  {path:"todo",component:TodoListComponent },
   {path:"product",component:HomeComponent},
   {path:"driven",component:ModelDrivenFormComponent},
   {path:"user",component:UserFormComponent},
+  {path:"users",component:UsersComponent},
   {path:"salles",component:SallesListComponent},
   {path:"product/details/:id",component:DetailsProductComponent},
   {path:"salle/details/:id",component:DetailsSalleComponent},

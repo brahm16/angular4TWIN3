@@ -15,7 +15,7 @@ export class DetailsSalleComponent implements OnInit {
 
   ngOnInit(): void {
     const id = +this.route.snapshot.params['id'];
-    this.salle=this.salleService.getSalle(id);
+    this.salleService.getSalle(id).subscribe((salle)=>this.salle=salle);
 
   }
 

@@ -1,0 +1,19 @@
+<div class="row text-success" >
+    <h1>Tache complet : {{ n }}</h1>
+    
+</div>
+<div class="row">
+    <div class="col-6 col-md-4 mb-3 mx-2">
+        <div class="my-5 todo">
+            <ul class="myul">
+                <li *ngFor="let t of listTodo">
+                    <h6 [ngStyle]="{'text-decoration': t.completed? 'line-through': ''}">{{t.title}}</h6>
+                </li>
+            </ul>
+    
+        </div>
+
+    </div>
+    
+
+</div>

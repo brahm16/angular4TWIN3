@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Product } from '../../modele/product';
 import { ProductService } from '../services/product.service';
 
@@ -12,7 +12,9 @@ export class HomeComponent implements OnInit {
   listProduct: Product[];
   priceMax: Number=0;
   showForm:Boolean=false;
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService,
+    @Inject('baseURL') private baseURL
+    ) { }
 
   incrementLike(product: Product){
 
@@ -35,7 +37,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.listProduct=this.productService.getProducts();
+    this.productService.getProducts().subscribe((products)=>this.listProduct=products);
   }
 
 }
