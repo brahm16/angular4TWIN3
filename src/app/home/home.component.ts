@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
   listProduct: Product[];
   priceMax: Number=0;
   showForm:Boolean=false;
+  errMess: string;
+
   constructor(private productService: ProductService,
     @Inject('baseURL') private baseURL
     ) { }
@@ -37,7 +39,8 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe((products)=>this.listProduct=products);
+    this.productService.getProducts().subscribe((products)=>{this.listProduct=products},
+    errmess => {this.errMess = <any>errmess});
   }
 
 }

@@ -11,11 +11,13 @@ import { TodoService } from '../services/todo.service';
 export class TodoListComponent implements OnInit {
   listTodo:Todo[];
   n: number;
+  errMess: string;
+
 
   constructor(private todoService:TodoService,private service:CalculServiceService) { }
 
   ngOnInit(): void {
-    this.todoService.getAll().subscribe((todos)=>this.listTodo=todos);
+    this.todoService.getAll().subscribe((todos)=>{this.listTodo=todos},errmess => {this.errMess = <any>errmess});
     this.n=this.service.getNumberOf(this.listTodo,"completed",true);
   }
 

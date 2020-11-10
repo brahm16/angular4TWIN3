@@ -10,11 +10,13 @@ import { SallesService } from '../services/salles.service';
 export class SallesListComponent implements OnInit {
 
   salles:Salle[];
+  errMess: string;
+
 
   constructor(private sallesService:SallesService) { }
 
   ngOnInit(): void {
-    this.sallesService.getSalles().subscribe((salles)=>this.salles=salles);
+    this.sallesService.getSalles().subscribe((salles)=>{this.salles=salles},errmess => {this.errMess = <any>errmess});
 
   }
 

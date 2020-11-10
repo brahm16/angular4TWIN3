@@ -38,6 +38,13 @@
 
             </tbody>
         </table>
+        <div *ngIf="errMess">
+            <h2>Error</h2>
+            <h4>{{errMess}}</h4>
+        </div>
+        <div [hidden]="errMess||users" class="spinner-grow text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
 
     </div>
 

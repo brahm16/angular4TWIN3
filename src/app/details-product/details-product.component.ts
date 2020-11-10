@@ -10,6 +10,7 @@ import { ProductService } from '../services/product.service';
 })
 export class DetailsProductComponent implements OnInit {
   product: Product;
+  errMess: string;
 
   constructor(private productService:ProductService, private route: ActivatedRoute) { 
   
@@ -20,7 +21,7 @@ export class DetailsProductComponent implements OnInit {
 
   ngOnInit(): void {
     const id = +this.route.snapshot.params['id'];
-    this.productService.getProduct(id).subscribe((product)=>this.product=product);
+    this.productService.getProduct(id).subscribe((product)=>this.product=product,errmess=>{this.errMess=<any>errmess});
   }
 
 }

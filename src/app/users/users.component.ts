@@ -13,6 +13,8 @@ export class UsersComponent implements OnInit {
   users: Utilisateur[];
   n: number;
   search: string
+  errMess: string
+  
 
    constructor(private service:CalculServiceService,private userService:UtilisateurService) { }
    getNbr(){
@@ -21,7 +23,7 @@ export class UsersComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.userService.getUtilisateurs().subscribe((users)=>this.users=users);
+    this.userService.getUtilisateurs().subscribe((users)=>{this.users=users},errmess=>{this.errMess=<any>errmess});
     
   }
 

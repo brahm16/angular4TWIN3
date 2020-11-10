@@ -10,12 +10,13 @@ import { SallesService } from '../services/salles.service';
 })
 export class DetailsSalleComponent implements OnInit {
   salle: Salle;
+  errMess: string;
 
   constructor(private salleService:SallesService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     const id = +this.route.snapshot.params['id'];
-    this.salleService.getSalle(id).subscribe((salle)=>this.salle=salle);
+    this.salleService.getSalle(id).subscribe((salle)=>this.salle=salle,errmess=>{this.errMess=<any>errmess});
 
   }
 
